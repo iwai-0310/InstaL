@@ -1,0 +1,29 @@
+.funny{
+	font-style: italic;
+	color: green;
+}
+.custom-holder-color{
+	background-color:#202020;
+}
+.table-dark{
+	color:white;
+	background-color: #343a40;
+}
+.custom-heading{
+	color:white;
+	margin-top: 1.5cm;
+	margin-bottom: 0.5cm;
+}
+body{
+background-color: black;
+color: white;
+}
+
+h1 {
+color: red;
+}
+
+h6{
+color: red;
+text-decoration: underline;
+}

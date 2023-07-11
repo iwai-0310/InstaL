@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Custom Login</title>
+<!-- local CSS -->
+
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+	crossorigin="anonymous">
+<style>
+.centered-card {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.incenter-card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+}
+
+.text-align-left {
+	text-align: left;
+}
+
+.highlight {
+	color: red;
+}
+</style>
+
+</head>
+<body style="background-color: #202020;">
+	<div class="container">
+		<div class="card bg-dark text-white centered-card incenter-card text-center"
+			style="height: 300px; width: 400px">
+			
+			<h5 class="card-title text-align-left">Login</h5>
+			<div class="card-header">>-------------------------------<</div>
+			<div class='form'>
+
+				<form action="#" th:action="@{/authenticateTheUser}" method="POST">
+
+					<!-- add support for login error -->
+					<div th:if="${param.error}">
+
+						<div class="alert alert-danger col-xs-offset-1 col-xs-10">
+							Invalid username and password.</div>
+					</div>
+					<!-- add support for logout -->
+					<div th:if="${param.logout}">
+						<div class="alert alert-success col-xs-offset-1 col-xs-10">
+							Logout Successfully
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group mb-3">
+							<label for="username">Username</label> <input type="text"
+								id="username" name="username">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group mb-3">
+							<label for="password">Password</label> <input type="password"
+								id="password" name="password">
+						</div>
+					</div>
+
+					<!--  	<p>
+				UserName: <input type="text" name="username"/>
+				</p>
+				<p>
+				Password: <input type="password" name="password"/>
+				</p>-->
+					<!-- <input type="submit" value="Login"/> -->
+					<!--  <button type="submit" class="btn btn-secondary col-sm-6 controls centered-button"> Login</button>-->
+					<div class="card-footer">
+						<button type="submit"
+							class="btn btn-outline-light col-sm-6 controls centered-button">
+							Login</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+
+</body>
+</html>
